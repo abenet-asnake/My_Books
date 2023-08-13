@@ -8,10 +8,11 @@ const usersRoutes = require('./routes/usersRoute');
 const app = express();
 // middleware of routes in the server 
 app.use(express.json());
-app.use('/api/books',bookRoutes);
-app.use('/api/users',usersRoutes);
 //creating the server port 
 const port=process.env.PORT_NUMBER || 5001; 
+//
+app.use('/api/books',bookRoutes);
+app.use('/api/users',usersRoutes);
 
 // creating the server listening on port
 app.listen(port,() => {

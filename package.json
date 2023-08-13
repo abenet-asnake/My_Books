@@ -17,9 +17,12 @@
   "author": "Abenet Asnake",
   "license": "MIT ",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "express-async-handler": "^1.2.0"
+    "express-async-handler": "^1.2.0",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.3"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

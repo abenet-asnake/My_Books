@@ -4,11 +4,13 @@ const dotenv= require('dotenv').config();
 const bookRoutes= require('./routes/booksRoute');
 const usersRoutes = require('./routes/usersRoute');
 const errorHandle = require('./middleware/errorhandlingbook');
+const db_connect= require('./config/DBConfig');
 
 //creating the express app
 const app = express();
 // middleware of routes in the server 
 app.use(express.json());
+db_connect();
 //creating the server port 
 const port=process.env.PORT_NUMBER || 5001; 
 //

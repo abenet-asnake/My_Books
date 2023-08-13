@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const usersSchema = mongoose.Schema({
     fullName: {
         type: 'string',
         required: [true, 'Please tell us your name']
@@ -29,4 +29,4 @@ const userSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model('user', usersSchema);

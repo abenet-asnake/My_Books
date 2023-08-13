@@ -3,6 +3,7 @@ const express= require('express');
 const dotenv= require('dotenv').config();
 const bookRoutes= require('./routes/booksRoute');
 const usersRoutes = require('./routes/usersRoute');
+const errorHandle = require('./middleware/errorhandlingbook');
 
 //creating the express app
 const app = express();
@@ -13,6 +14,7 @@ const port=process.env.PORT_NUMBER || 5001;
 //
 app.use('/api/books',bookRoutes);
 app.use('/api/users',usersRoutes);
+app.use(errorHandle);
 
 // creating the server listening on port
 app.listen(port,() => {

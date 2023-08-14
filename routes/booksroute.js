@@ -1,29 +1,27 @@
 // importing the express module 
 const express= require('express');
-const routes= express.Routes();
+const { addBooks, 
+         editBooks, 
+         deleteBooks, 
+         getBooks, 
+         getBooksByID, 
+         getBooksByAuthor, 
+         getBooksByTittle } = require('../controller/bookControllers');
+const routes = express.Router();
 // defining all routes
-routes.post('/add', (res,req) =>{
-    res.status(200).json({message:"Adding New Books "});
-});
+routes.post('/add', addBooks);
 
-routes.put('/:id', (res,req) =>{
-    res.status(200).json({message: `Editing The Book for ${req.params.id}`});
-});
+routes.put('/:id',editBooks);
 
-routes.delete('/:id', (res,req) =>{
-    res.status(200).json({message: `Delete The Book for ${req.params.id}`});
-});
+routes.delete('/:id',deleteBooks );
 
-routes.get('/:id', (res,req) =>{
-res.status(200).json({message:`Get the Book by ${req.params.id}`});
-});
+routes.get('/',getBooks);
+    
 
-routes.get('/:author', (res,req) =>{
-    res.status(200).json({message:"Get Books By Author "});
-});
+routes.get('/:id',getBooksByID );
 
-routes.get('/:tittle', (res,req) =>{
-    res.status(200).json({message:"Get Books By Author "});
-});
+routes.get('/:author', getBooksByAuthor);
+
+routes.get('/:tittle',getBooksByTittle );
 
 module.exports = routes;

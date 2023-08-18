@@ -27,4 +27,4 @@ const logoutUser = asyncHandler(async (req,res)=>{
     res.status(200).json({message: "The Current User"});
 });
 
-module.exports ={registerUsers,loginUsers,currentUsers,loginUsers};
+module.exports ={registerUsers,loginUsers,currentUsers,loginUsers,logoutUser};

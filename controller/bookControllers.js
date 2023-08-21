@@ -34,7 +34,7 @@ const getBooksByID= asyncHandler(async (req,res) =>{
     res.status(200).json({message:`Get the Book by ${req.params.id}`});
     })
 
-//@disc getBooksByAuthor get Books by ID
+//@disc getBooksByAuthor get Books by Author
 //@routes GET /api/books
 //@access public
 const getBooksByAuthor = asyncHandler(async (req,res) =>{
@@ -46,7 +46,7 @@ const getBooksByAuthor = asyncHandler(async (req,res) =>{
 //@routes GET /api/books
 //@access public
 const getBooksByTittle = asyncHandler(async (req,res) =>{
-    res.status(200).json({message:"Get Books By Author "});
+    res.status(200).json({message:"Get Books By Tittle "});
 });
 
 module.exports = {addBooks,editBooks,deleteBooks,getBooks,getBooksByTittle,getBooksByAuthor,getBooksByID};
